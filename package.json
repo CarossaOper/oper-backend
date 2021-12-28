@@ -1,0 +1,19 @@
+{
+  "name": "oper-backend",
+  "version": "1.0.0",
+  "description": "Backend for HCGOper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "export DB_URL='mongodb+srv://root:laho1472@cluster0.xxvir.mongodb.net/oper?retryWrites=true&w=majority' && node server.js",
+    "start": "node server.js"
+  },
+  "author": "Louis Karan",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.1.2"
+  }
+}
