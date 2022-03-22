@@ -5,15 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "export DB_URL='mongodb+srv://root:laho1472@cluster0.xxvir.mongodb.net/oper?retryWrites=true&w=majority' && node server.js",
+    "debug": "runas /noprofile /user:pleb\\administrator 'setx DB_URL \"mongodb+srv://root:laho1472@cluster0.xxvir.mongodb.net/oper?retryWrites=true&w=majority\" && node server.js'",
     "start": "node server.js"
   },
   "author": "Louis Karan",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2"
   }
 }

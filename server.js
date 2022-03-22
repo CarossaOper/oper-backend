@@ -1,7 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyparser = require("body-parser")
-const router = require("./api/api.js")
+const api = require("./api/api.js")
+const cors = require("cors")
 
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -10,13 +11,15 @@ db.on("error", console.error.bind(console, "Error running Mongoose:"));
 
 const app = express()
 
+app.use(cors())
+
 app.use(bodyparser.urlencoded({
     extended: true
 }))
 
 app.use(bodyparser.json())
 
-app.use("/api", router)
+app.use("/api", api)
 
 const port = process.env.API_PORT || 8080
 app.listen(port)
