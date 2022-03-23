@@ -21,7 +21,7 @@ app.use(bodyparser.json())
 
 app.use("/api", api)
 
-const port = process.env.API_PORT || 8080
+const port = process.env.PORT
 app.listen(port)
 
 console.log(`🚀 Launched API on port ${port}`)
